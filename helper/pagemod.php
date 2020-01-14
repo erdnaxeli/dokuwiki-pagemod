@@ -4,7 +4,7 @@
  *
  * @author Darren Hemphill <darren@baseline-remove-this-it.co.za>
  */
-class helper_plugin_pagemod_pagemod extends helper_plugin_bureaucracy_action {
+class helper_plugin_pagemodtpl_pagemod extends helper_plugin_bureaucracy_action {
 
     var $patterns;
     var $values;
@@ -134,7 +134,7 @@ class helper_plugin_pagemod_pagemod extends helper_plugin_bureaucracy_action {
      */
     protected function updatePage($template, $template_section_id) {
         $this->template_section_id = $template_section_id;
-        return preg_replace_callback('/<pagemod (\w+)(?: (.+?))?>(.*?)<\/pagemod>/s', array($this, 'parsePagemod'), $template);
+        return preg_replace_callback('/<pagemodtpl (\w+)(?: (.+?))?>(.*?)<\/pagemodtpl>/s', array($this, 'parsePagemod'), $template);
     }
 
     /**
